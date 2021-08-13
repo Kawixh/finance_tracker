@@ -51,8 +51,14 @@
   </div>
 </nav>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-<%= yield %>
+<div class="container">
+
+
+  <%= p show_notice notice %>
+
+  <%= p show_alert alert %>
+
+  <%= yield %>
+</div>
 </body>
 </html>
