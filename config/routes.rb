@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'users/portfolio'
   get "/welcome", to: "welcome#index"
   get '/portfolio', to: 'users#portfolio'
   devise_for :users, controllers: {sessions: 'users/sessions', registrations: 'users/registrations'}
