@@ -1,2 +1,16 @@
-<h1>Users#portfolio</h1>
-<p>Find me in app/views/users/portfolio.html.erb</p>
+<h1>Portfolio</h1>
+<div class="search-area">
+  <h3>Search stocks</h3>
+  <%= form_tag '#', method: :get do %>
+  <div class="form-group row">
+    <div class="col-sm-9">
+      <%= text_field_tag :stock, params[:stock], placeholder: "search stock", autofocus: true, class: "form-control form-control-lg" %>
+    </div>
+    <div class="col-sm-3">
+      <%= button_tag type: :submit, class: "btn btn-success" do%>
+      <%= 'Search' %>
+      <% end %>
+    </div>
+  </div>
+  <% end %>
+</div>
