@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :user_stocks
+  resources :user_stocks, only: [:create]
   devise_for :users, controllers: {sessions: 'users/sessions', registrations: 'users/registrations'}
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
