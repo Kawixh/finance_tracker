@@ -1,11 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+kawish-finance.herokuapp.com
+
+This app is written on Ruby on Rails
+This is a stock tracking app with friend capabilities that let you track stocks with firends
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version: > 3.0
+
+* Rails version: > 6.0
 
 * System dependencies
 
