@@ -1,0 +1,18 @@
+<% if notice %>
+<div class="alert alert-success">
+  <button type="button" class="btn btn-close close" aria-label="Close" data-dismiss = "alert">
+    <span aria-hidden="true"></span>
+  </button>
+  <%= notice %>
+</div>
+<% end %>
+
+<% if alert %>
+  <div class="alert alert-danger">
+    <button type="button" class="btn btn-close close" aria-label="Close" data-dismiss = "alert">
+      <span aria-hidden="true"></span>
+    </button>
+    <%= alert %>
+  </div>
+<% end %>
+
