@@ -3,28 +3,26 @@
 <div class="search-area">
   <h3>Search friends</h3>
 
-  <%= form_tag friends_search_path, remote: true, method: :get do %>
+  <%= search_form_for @q, url: friends_search_path, remote: true, method: :get do |f| %>
     <div class="form-group row">
       <div class="col-sm-9">
-        <%= text_field_tag :friend, params[:friend], placeholder: "search friend", autofocus: true, class: "form-control form-control-lg" %>
+    <%= f.search_field :first_name_or_last_name_or_email_cont, class: "form-control form-control-lg", autocomplete: true, placeholder: "Search people"%>
       </div>
       <div class="col-sm-3">
-        <%= button_tag type: :submit, class: "btn btn-success" do%>
-          &#128269; Search <% "Search" %>
+        <%= button_tag type: :submit, class: "btn btn-success btn-lg" do %>
+          &#128269; Search
+          <% "Search" %>
         <% end %>
       </div>
     </div>
   <% end %>
 
-  <!--  <# = render 'users/result' %>-->
-
-  <br>
+  <br >
 
 </div>
 
 <div id="results"></div>
 
-
 <% if !@friends.empty? %>
-  <% render 'friends/list' %>
+  <%= render 'friends/list' %>
 <% end %>

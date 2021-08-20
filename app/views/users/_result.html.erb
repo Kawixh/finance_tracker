@@ -1,13 +1,21 @@
 <%= render 'layouts/messages' %>
 
 <% if @stock %>
-  <div class="card card-header results-block">
-    <strong>Symbol: </strong> <%= @stock.ticker %>
-    <strong>Name: </strong> <%= @stock.name %>
-    <strong>price: </strong> <%= @stock.last_price %>
-    <% if current_user.can_track_stock?(@stock.ticker) %>
-      <%= link_to 'Add to portfolio', user_stocks_path(user: current_user, ticker: @stock.ticker), class: 'btn btn-success', method: :post %>
-    <% else %>
+  <div class="row">
+    <div class="card col-auto mx-2">
+      <div class="card-body">
+        <h5 class="card-title">
+          <span>Symbol: </span> <%= @stock.ticker %>
+        </h5>
+        <p class="card-text">
+          <strong>Name: </strong> <%= @stock.name %>
+        </p>
+        <p class="card-text">
+          <strong>price: </strong> <%= @stock.last_price %>
+        </p>
+        <% if current_user.can_track_stock?(@stock.ticker) %>
+          <%= link_to 'Add to portfolio', user_stocks_path(user: current_user, ticker: @stock.ticker), class: 'btn btn-success', method: :post %>
+        <% else %>
       <span class="badge bg-secondary">
         You are already tracking
         <% if !current_user.under_stock_limit? %>
@@ -16,6 +24,8 @@
           <%= @stock.ticker %>
         <% end %>
       </span>
-    <% end %>
+        <% end %>
+      </div>
+    </div>
   </div>
 <% end %>

@@ -1,0 +1,19 @@
+<%= render 'layouts/messages' %>
+
+<% if @people %>
+  <div class="row">
+  <% @people.each do |friend| %>
+    <div class="card col-4 mx-2" style="width: 10rem;">
+      <div class="card-body">
+        <h5 class="card-title">
+          <%= "#{friend.first_name} #{friend.last_name}" %>
+        </h5>
+        <p class="card-text">
+          <%= friend.email %>
+        </p>
+        <%= link_to 'Add friend', friendships_path(friend: friend), class: 'btn btn-success', method: :post %>
+      </div>
+    </div>
+  <% end %>
+  </div>
+<% end %>

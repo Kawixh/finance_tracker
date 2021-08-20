@@ -10,7 +10,6 @@ class Stock < ApplicationRecord
       secret_token: Rails.application.credentials.iex[:secret_token],
       endpoint: 'https://sandbox.iexapis.com/v1'
     )
-
     begin
       @stock = Stock.create(name: @client.company(ticker).company_name, ticker: ticker, last_price: @client.price(ticker))
     rescue => exception

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'stocks/search', to: 'stocks#search'
   get '/friends', to: 'users#friends'
   get '/friends/search/', to: 'users#search'
+  resources :friendships, only: [:create, :destroy]
 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

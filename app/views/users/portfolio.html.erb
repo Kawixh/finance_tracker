@@ -4,19 +4,20 @@
   <h3>Search stocks</h3>
 
   <%= form_tag stocks_search_path, remote: true, method: :get do %>
-  <div class="form-group row">
-    <div class="col-sm-9">
-      <%= text_field_tag :stock, params[:stock], placeholder: "search stock", autofocus: true, class: "form-control form-control-lg" %>
+    <div class="form-group row">
+      <div class="col-sm-9">
+        <%= text_field_tag :stock, params[:stock], placeholder: "search stock", autofocus: true, class: "form-control form-control-lg" %>
+      </div>
+      <div class="col-sm-3">
+        <%= button_tag type: :submit, class: "btn btn-success btn-lg" do %>
+          &#128269; Search
+          <% "Search" %>
+        <% end %>
+      </div>
     </div>
-    <div class="col-sm-3">
-      <%= button_tag type: :submit, class: "btn btn-success" do%>
-        &#128269; Search <% "Search" %>
-      <% end %>
-    </div>
-  </div>
   <% end %>
 
-<!--  <# = render 'users/result' %>-->
+  <!--  <# = render 'users/result' %>-->
 
   <br>
 
@@ -26,4 +27,4 @@
 
 <% if !@tracked_stocks.empty? %>
   <%= render 'stocks/list' %>
-  <% end %>
+<% end %>
