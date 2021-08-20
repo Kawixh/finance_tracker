@@ -1,11 +1,19 @@
-.navbar-brand {
+@import "bootstrap/scss/bootstrap";
+
+/*.navbar-brand {
   font-size: 4rem;
-}
+}*/
+
 .search-area {
-  padding: 5%;
+  padding: 3rem 0rem 0rem 5rem;
 }
 
-.results-block {
-  padding-left: 5%;
+#results, #results-block {
+  padding-left: 5rem;
+  padding-top: 0.8rem;
   display: inline-block!important;
+}
+
+.btn-close {
+  outline: none!important;
 }
